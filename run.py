@@ -1,13 +1,5 @@
-import FDPClient as fdpClient
+import FDPClientLDPBased as fdpLdpClient
 
-#fdp_url = "http://lumc-beat-covid.fair-dtls.surf-hosted.nl"
-#fdp_url = "https://fdp.lumc.nl"
-fdp_url = "http://localhost:8082"
-
-
-fdp = fdpClient.FDPClient(fdp_url)
-graph = fdp.create_fdp_dump()
-print("{} statements retrieved from fdp {}.".format(len(graph), fdp_url))
-dump_file = open("fdp_dump.nq", "w")
-dump_file.write(graph.serialize(format="nquads").decode("utf-8"))
-dump_file.close()
+fdp_url = "http://lumc-beat-covid.fair-dtls.surf-hosted.nl"
+fdp = fdpLdpClient.FdpLdpClient(fdp_url)
+fdp.create_fdp_data_dump()
