@@ -126,3 +126,5 @@ dmypy.json
 .idea/
 
 fdp_dump.nq
+
+*.nq
